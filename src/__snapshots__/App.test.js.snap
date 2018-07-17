@@ -15,7 +15,7 @@ exports[`renders correctly 1`] = `
     <h1
       className="App-title"
     >
-      Welcome to the Viel Cornwell Hookah Study
+      Welcome to H C Study
     </h1>
   </header>
   <p
