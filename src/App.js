@@ -4,7 +4,7 @@ import './App.css';
 import getWeb3 from "./utils/getWeb3";
 import linniaHub from './contracts/LinniaHub.json';
 // import linniaPermissions from './contracts/LinniaPermissions.json';
-import linniaRecords from './contracts/LinniaRecords.json';
+// import linniaRecords from './contracts/LinniaRecords.json';
 
 class App extends Component {
 
@@ -50,7 +50,7 @@ class App extends Component {
 
     this.state.web3.version.getNetwork(console.log);
 
-    let hubInstance;
+    // let hubInstance;
     let recordsInstance;
     //
     this.state.web3.eth.getAccounts((error, accounts) => {
@@ -58,7 +58,7 @@ class App extends Component {
       linniaHub
          .deployed()
          .then(hubInstance => {
-           hubInstance = hubInstance;
+           // hubInstance = hubInstance;
            this.setState({
              hubInstance,
              accounts
@@ -76,6 +76,7 @@ class App extends Component {
       });
     });
   }
+
   //
   // updateAddrsBalances = async accounts => {
   //   await _.forEach(accounts, async addr => {
