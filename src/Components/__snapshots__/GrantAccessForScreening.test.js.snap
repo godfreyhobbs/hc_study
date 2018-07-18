@@ -3,6 +3,9 @@
 exports[`renders correctly 1`] = `
 <div>
   <div
+    className="Toastify"
+  />
+  <div
     className="terms-and-conditions"
   >
     <p>
