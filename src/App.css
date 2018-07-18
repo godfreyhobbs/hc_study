@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -9,6 +9,7 @@
 }
 
 .App-header {
+  text-align: center;
   background-color: white;
   height: 150px;
   padding: 20px;
@@ -26,7 +27,7 @@
 
 .medical-summary {
   text-align: left;
-  padding-left: 30%;
+  padding-left: 10%;
   margin-bottom: 10px;
 }
 
@@ -35,6 +36,7 @@ p {
 }
 
 button {
+  margin-left:25%;
   background-color: #4CAF50; /* Green */
   color: white;
   border-radius: 2px;

@@ -12,7 +12,7 @@ class GrantAccessForScreening extends Component {
 
     this.state = {
       dataHash: this.props.searchResultJSON.dataHash,
-      viewerAddress: '0x25c63834a9d3cd3c221b7cfbf6b1a02bdffcf0d9',
+      viewerAddress: '0x658cf33bec483e14c5df7bb40e63ac52ace1d896',
     }
 
   }

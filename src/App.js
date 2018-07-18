@@ -70,20 +70,24 @@ class App extends Component {
     //
     this.state.web3.eth.getAccounts((error, accounts) => {
       if (error) {
+        alert(error);
         console.error(error);
       } else {
         let userAccount = accounts[0].toLowerCase();
+        // alert(JSON.stringify(accounts))
         fetch('http://18.222.147.7:3000/records?owner=' + userAccount)
            .then(response => response.json())
            .then(myJson => {
              console.log(myJson);
              const searchResultJSON = myJson[0];
+             // alert(JSON.stringify(myJson[0]));
              this.setState({searchResultJSON});
 
              linniaHub
                 .at(LinniaHubRopstenAddress)
                 .then(hubInstance => {
                   // hubInstance = hubInstance;
+                  // alert(JSON.stringify(accounts));
                   this.setState({
                     hubInstance,
                     accounts
