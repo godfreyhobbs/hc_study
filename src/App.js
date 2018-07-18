@@ -60,35 +60,37 @@ class App extends Component {
     this.state.web3.eth.getAccounts((error, accounts) => {
       if (error) {
         console.error(error);
+      } else {
+        let userAccount = accounts[0].toLowerCase();
+        fetch('http://18.222.147.7:3000/records?owner=' + userAccount)
+           .then(response => response.json())
+           .then(myJson => {
+             console.log(myJson);
+             const searchResultJSON = myJson;
+             this.setState({searchResultJSON});
+
+             linniaHub
+                .at('0xc39f2e4645de2550ee3b64e6dc47f927e8a98934')
+                .then(hubInstance => {
+                  // hubInstance = hubInstance;
+                  this.setState({
+                    hubInstance,
+                    accounts
+                  });
+
+                  // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
+                  return hubInstance.recordsContract();
+                })
+                .then(result => {
+                  let tmpContract = contract(linniaRecordsHub);
+                  tmpContract.setProvider(this.state.web3.currentProvider);
+                  const recordsInstance = tmpContract.at(result);
+                  this.setState({
+                    recordsInstance
+                  });
+                });
+           });
       }
-      fetch('http://18.222.147.7:3000/records?owner=' + accounts[0].toLowerCase())
-         .then(response => response.json())
-         .then(myJson => {
-           console.log(myJson);
-           const searchResultJSON = myJson;
-           this.setState({searchResultJSON});
-
-           linniaHub
-              .at('0xc39f2e4645de2550ee3b64e6dc47f927e8a98934')
-              .then(hubInstance => {
-                // hubInstance = hubInstance;
-                this.setState({
-                  hubInstance,
-                  accounts
-                });
-
-                // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
-                return hubInstance.recordsContract();
-              })
-              .then(result => {
-                let tmpContract = contract(linniaRecordsHub);
-                tmpContract.setProvider(this.state.web3.currentProvider);
-                const recordsInstance = tmpContract.at(result);
-                this.setState({
-                  recordsInstance
-                });
-              });
-         });
     });
   }
 
