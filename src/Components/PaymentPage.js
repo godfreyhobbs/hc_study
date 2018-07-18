@@ -12,11 +12,11 @@ class PaymentPage extends Component {
     return (
       <div>
         <div>
-          <h1>Promise of Payment</h1>
-          <p>You will be paid to account {this.props.account} within 2 business days.</p>
+          <h3>Promise of Payment</h3>
+          <h3>You will be paid to account {this.props.account} within 2 business days.</h3>
 
-          <p>Study Number: 12345</p>
-          <p>Participant ID: 123</p>
+          <h3>Study Number: 12345</h3>
+          <h3>Participant ID: 123</h3>
         </div>
       </div>
     );
