@@ -19,7 +19,9 @@ exports[`renders correctly 1`] = `
   <div>
     Insert Google Form here
   </div>
-  <button>
+  <button
+    onClick={[Function]}
+  >
     Submit
   </button>
 </div>

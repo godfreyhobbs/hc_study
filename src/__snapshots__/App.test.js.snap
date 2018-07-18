@@ -19,26 +19,14 @@ exports[`renders correctly 1`] = `
     </h1>
   </header>
   <div>
-    <header
-      className="App-header"
-    >
-      <img
-        alt="logo"
-        className="App-logo"
-        src="logo.svg"
-      />
-      <h1
-        className="App-title"
-      >
-        Welcome to the Viel Cornwell Hookah Study
-      </h1>
-    </header>
     <p
       className="App-intro"
     >
       The Departments of Epidemiology and Genetic Medicine at Veil Cornwell Medical College are looking for shisha ("Hookah") smokers to participate in a research study, looking at the effects that sweet delicous shisha may have on the lung cells.
     </p>
-    <button>
+    <button
+      onClick={[Function]}
+    >
       Start Screening
     </button>
   </div>

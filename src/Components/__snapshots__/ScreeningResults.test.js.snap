@@ -1,14 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<header
-  className="App-header"
->
-  <img
-    alt="logo"
-    className="App-logo"
-    src="logo.svg"
-  />
+<div>
   <h1
     className="App-title"
   >
@@ -17,8 +10,10 @@ exports[`renders correctly 1`] = `
   <p>
     Congratulations! You are eligible for this study.
   </p>
-  <button>
+  <button
+    onClick={[Function]}
+  >
     Start Questionnaire
   </button>
-</header>
+</div>
 `;
