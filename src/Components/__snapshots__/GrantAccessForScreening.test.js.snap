@@ -16,20 +16,43 @@ exports[`renders correctly 1`] = `
       Welcome to the Viel Cornwell Hookah Study
     </h1>
   </header>
-  <div>
-    <h1>
-      Promise of Payment
-    </h1>
+  <div
+    className="terms-and-conditions"
+  >
     <p>
-      You will be paid to account 
-       within 2 business days.
+      Some information to grant access to Viel Cornwell to use your data.
     </p>
     <p>
-      Study Number: 12345
+      Something about you understand how we will use data, when and where
     </p>
     <p>
-      Participant ID: 123
+      We won't hold your data or something, but look at it to see if you are eligble, etc.
     </p>
   </div>
+  <div
+    className="medical-summary"
+  >
+    <div
+      className="FHIR-docs"
+    >
+      FHIR Docs
+    </div>
+    <div
+      className="medical-overview"
+    >
+      Medical Record Summary
+    </div>
+    <div
+      className="hospital"
+    >
+      Joe's Hospital
+    </div>
+  </div>
+  <p>
+    Hey, man I understand and agree to share my Medical Record info with Viel Cornwell
+  </p>
+  <button>
+    I Agree
+  </button>
 </div>
 `;
