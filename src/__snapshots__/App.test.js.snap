@@ -23,5 +23,9 @@ exports[`renders correctly 1`] = `
   >
     H C Study
   </p>
+   
+  <p>
+    Account: 
+  </p>
 </div>
 `;
