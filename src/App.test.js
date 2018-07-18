@@ -11,7 +11,7 @@ it('renders without crashing', () => {
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<App page="http://www.facebook.com">Facebook</App>)
+    .create(<App />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

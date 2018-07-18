@@ -7,8 +7,6 @@ import linniaHubJSON from './contracts/LinniaHub.json';
 // import linniaPermissions from './contracts/LinniaPermissions.json';
 import linniaRecordsHub from './contracts/LinniaRecords.json';
 
-// require('dotenv').config();
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +41,8 @@ class App extends Component {
   }
 
   instantiateContract() {
+    const LinniaHubRopstenAddress = '0xc39f2e4645de2550ee3b64e6dc47f927e8a98934';
+
     /*
      * SMART CONTRACT EXAMPLE
      *
@@ -70,7 +70,7 @@ class App extends Component {
              this.setState({searchResultJSON});
 
              linniaHub
-                .at('0xc39f2e4645de2550ee3b64e6dc47f927e8a98934')
+                .at(LinniaHubRopstenAddress)
                 .then(hubInstance => {
                   // hubInstance = hubInstance;
                   this.setState({
