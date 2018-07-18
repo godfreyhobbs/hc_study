@@ -10,7 +10,7 @@ class IframeQuestions extends Component {
   render() {
     return (
        <div>
-         <iframe src={this.questionForm} height="3550px" width="70%"/>
+         <iframe title="researchQ-iframe" src={this.questionForm} height="3550px" width="70%"/>
        </div>
      );
   }
