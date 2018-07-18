@@ -3,8 +3,8 @@ import './App.css';
 import getWeb3 from './utils/getWeb3';
 import contract from 'truffle-contract';
 import linniaHubJSON from './contracts/LinniaHub.json';
-// import linniaPermissions from './contracts/LinniaPermissions.json';
-import linniaRecordsHub from './contracts/LinniaRecords.json';
+import linniaPermissionsJSON from './contracts/LinniaPermissions.json';
+// import linniaRecordsHub from './contracts/LinniaRecords.json';
 import StartPage from "./Components/StartPage";
 import MainHeader from "./Components/Header";
 import ScreeningResults from "./Components/ScreeningResults";
@@ -23,6 +23,7 @@ class App extends Component {
       web3: null,
       hubInstance: null,
       recordsInstance: null,
+      permissionsInstance: null,
       accounts: [],
       searchResultJSON: {}
     };
@@ -89,14 +90,14 @@ class App extends Component {
                   });
 
                   // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
-                  return hubInstance.recordsContract();
+                  return hubInstance.permissionsContract();
                 })
                 .then(result => {
-                  let tmpContract = contract(linniaRecordsHub);
+                  let tmpContract = contract(linniaPermissionsJSON);
                   tmpContract.setProvider(this.state.web3.currentProvider);
-                  const recordsInstance = tmpContract.at(result);
+                  const permissionsInstance = tmpContract.at(result);
                   this.setState({
-                    recordsInstance
+                    permissionsInstance
                   });
                 });
            });
@@ -121,7 +122,9 @@ class App extends Component {
          <MainHeader/>
          {(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage}/>}
          {(this.state.currentPage === 'GrantAccess') &&
-         <GrantAccessForScreening callback={this.setCurrentPage}/>}
+         <GrantAccessForScreening callback={this.setCurrentPage} web3={this.state.web}
+                                  permissionsInstance={this.state.permissionsInstance}
+                                  accounts={this.state.accounts} searchResultJSON={this.state.searchResultJSON}/>}
          {(this.state.currentPage === 'ScreeningResults') &&
          <ScreeningResults callback={this.setCurrentPage}/>}
          {(this.state.currentPage === 'Questions') &&
