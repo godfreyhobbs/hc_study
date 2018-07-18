@@ -6,7 +6,6 @@ class GrantAccessForScreening extends Component {
   render() {
     return (
       <div>
-        <Header text="Grant Access For Screening"></Header>
         <div className="terms-and-conditions">
           <p>Some information to grant access to Viel Cornwell to use your data.</p>
           <p>Something about you understand how we will use data, when and where</p>
