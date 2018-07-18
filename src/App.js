@@ -5,7 +5,10 @@ import getWeb3 from "./utils/getWeb3";
 import contract from "truffle-contract";
 import linniaHubJSON from './contracts/LinniaHub.json';
 // import linniaPermissions from './contracts/LinniaPermissions.json';
-// import linniaRecords from './contracts/LinniaRecords.json';
+import linniaRecordsHub from './contracts/LinniaRecords.json';
+
+
+require('dotenv').config();
 
 class App extends Component {
 
@@ -19,24 +22,34 @@ class App extends Component {
       hubInstance: null,
       recordsInstance: null,
       accounts: [],
+      searchResultJSON: {},
     };
   }
 
   componentDidMount() {
     // Get network provider and web3 instance.
     // See utils/getWeb3 for more info.
+    fetch('http://18.222.147.7:3000/records?owner=0x9a513f4ad88681bfa4565ddb41aaef1fffd84462')
+       .then((response) =>
+          response.json()
+       )
+       .then((myJson) => {
+         console.log(myJson);
+         const searchResultJSON = myJson;
+         this.setState({searchResultJSON});
+         getWeb3
+            .then(results => {
+              this.setState({
+                web3: results.web3
+              });
 
-    getWeb3
-       .then(results => {
-         this.setState({
-           web3: results.web3
-         });
+              // Instantiate contract once web3 provided.
+              this.instantiateContract();
+            })
+            .catch((e) => {
+              console.log("Error finding web3.");
+            });
 
-         // Instantiate contract once web3 provided.
-         this.instantiateContract();
-       })
-       .catch((e) => {
-         console.log("Error finding web3.");
        });
   }
 
@@ -53,16 +66,15 @@ class App extends Component {
     this.state.web3.version.getNetwork(console.log);
 
     // let hubInstance;
-    let recordsInstance;
+    // let recordsInstance;
     //
     this.state.web3.eth.getAccounts((error, accounts) => {
 
-      if(error) {
+      if (error) {
         console.error(error)
       }
 
-      linniaHub
-         .deployed()
+      linniaHub.at('0xc39f2e4645de2550ee3b64e6dc47f927e8a98934')
          .then(hubInstance => {
            // hubInstance = hubInstance;
            this.setState({
@@ -73,7 +85,8 @@ class App extends Component {
            // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
            return hubInstance.recordsContract();
          }).then(result => {
-        recordsInstance = result;
+
+        const recordsInstance = contract(linniaRecordsHub).at(result);
         this.setState({
           recordsInstance
         });
