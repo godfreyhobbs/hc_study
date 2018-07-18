@@ -4,11 +4,18 @@ import StudyDescription from './StudyDescription';
 import '../App.css';
 
 class StartPage extends Component {
+
+  handleClick() {
+    this.props.callback("GrantAccess");
+  }
+
   render() {
     return (
       <div>
         <StudyDescription></StudyDescription>
-        <button>Start Screening</button>
+        <button onClick={(e) => this.handleClick(e)}>
+          Start Screening
+        </button>
       </div>
     );
   }

@@ -7,6 +7,7 @@ import linniaHubJSON from './contracts/LinniaHub.json';
 import linniaRecordsHub from './contracts/LinniaRecords.json';
 import StartPage from "./Components/StartPage";
 import MainHeader from "./Components/Header";
+import ScreeningResults from "./Components/ScreeningResults";
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +41,10 @@ class App extends Component {
        .catch(e => {
          console.log('Error finding web3.');
        });
+  }
+
+  setCurrentPage = (newCurrentPage) => {
+    this.setState({currentPage: newCurrentPage});
   }
 
   instantiateContract() {
@@ -111,7 +116,9 @@ class App extends Component {
     return (
        <div className="App">
          <MainHeader/>
-         {(this.state.currentPage === 'Start') && <StartPage/>}
+         {(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage}/>}
+         {(this.state.currentPage === 'GrantAccess') &&
+         <ScreeningResults callback={this.setCurrentPage}/>}
        </div>
     );
   }
