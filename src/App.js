@@ -57,6 +57,10 @@ class App extends Component {
     //
     this.state.web3.eth.getAccounts((error, accounts) => {
 
+      if(error) {
+        console.error(error)
+      }
+
       linniaHub
          .deployed()
          .then(hubInstance => {
