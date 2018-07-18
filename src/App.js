@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import getWeb3 from "./utils/getWeb3";
-import linniaHub from './contracts/LinniaHub.json';
+import contract from "truffle-contract";
+import linniaHubJSON from './contracts/LinniaHub.json';
 // import linniaPermissions from './contracts/LinniaPermissions.json';
 // import linniaRecords from './contracts/LinniaRecords.json';
 
@@ -34,7 +35,7 @@ class App extends Component {
          // Instantiate contract once web3 provided.
          this.instantiateContract();
        })
-       .catch(() => {
+       .catch((e) => {
          console.log("Error finding web3.");
        });
   }
@@ -46,6 +47,7 @@ class App extends Component {
      * Normally these functions would be called in the context of a
      * state management library, but for convenience I've placed them here.
      */
+    const linniaHub = contract(linniaHubJSON);
     linniaHub.setProvider(this.state.web3.currentProvider);
 
     this.state.web3.version.getNetwork(console.log);
@@ -54,6 +56,10 @@ class App extends Component {
     let recordsInstance;
     //
     this.state.web3.eth.getAccounts((error, accounts) => {
+
+      if(error) {
+        console.error(error)
+      }
 
       linniaHub
          .deployed()
@@ -65,13 +71,11 @@ class App extends Component {
            })
 
            // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
-
            return hubInstance.recordsContract();
          }).then(result => {
         recordsInstance = result;
         this.setState({
-          recordsInstance,
-          accounts
+          recordsInstance
         });
       });
     });
@@ -97,7 +101,9 @@ class App extends Component {
          </header>
          <p className="App-intro">
            H C Study
-         </p>
+         </p> <p>
+         Account: {this.state.accounts[0]}
+       </p>
        </div>
     );
   }
