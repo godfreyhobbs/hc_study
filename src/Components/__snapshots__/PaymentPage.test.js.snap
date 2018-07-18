@@ -3,19 +3,19 @@
 exports[`renders correctly 1`] = `
 <div>
   <div>
-    <h1>
+    <h3>
       Promise of Payment
-    </h1>
-    <p>
+    </h3>
+    <h3>
       You will be paid to account 
        within 2 business days.
-    </p>
-    <p>
+    </h3>
+    <h3>
       Study Number: 12345
-    </p>
-    <p>
+    </h3>
+    <h3>
       Participant ID: 123
-    </p>
+    </h3>
   </div>
 </div>
 `;

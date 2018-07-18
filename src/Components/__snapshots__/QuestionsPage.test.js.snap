@@ -2,18 +2,18 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <div>
-    <iframe
-      height="3550px"
-      src="https://docs.google.com/forms/d/1UVUlJlM1hy1wn2_54fuweYm4tkfvUtYycAF8FB8rhxM/viewform?edit_requested=true"
-      title="researchQ-iframe"
-      width="70%"
-    />
-  </div>
   <button
     onClick={[Function]}
   >
     Get Your Money!
   </button>
+  <div>
+    <iframe
+      height="3550px"
+      src="https://docs.google.com/forms/d/1UVUlJlM1hy1wn2_54fuweYm4tkfvUtYycAF8FB8rhxM/viewform?edit_requested=true"
+      title="researchQ-iframe"
+      width="90%"
+    />
+  </div>
 </div>
 `;
