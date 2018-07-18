@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Header from './Header';
+import IframeQuestions from './IframeQuestions';
 import '../App.css';
 
 class QuestionsPage extends Component {
-
 
   handleClick() {
     this.props.callback("Payment");
@@ -12,10 +12,9 @@ class QuestionsPage extends Component {
   render() {
     return (
        <div>
-         <Header text="Questions"></Header>
-         <div>Insert Google Form here</div>
+         <IframeQuestions></IframeQuestions>
          <button onClick={(e) => this.handleClick(e)}>
-           Submit
+           Get Your Money!
          </button>
        </div>
     );
