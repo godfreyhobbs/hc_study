@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import StudyDescription from './StudyDescription';
 import '../App.css';
 

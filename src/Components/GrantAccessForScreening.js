@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import '../App.css';
 
 class GrantAccessForScreening extends Component {
+
+  handleClick() {
+    this.props.callback("ScreeningResults");
+  }
+
   render() {
     return (
       <div>
@@ -19,7 +23,8 @@ class GrantAccessForScreening extends Component {
         </div>
 
         <p>Hey, man I understand and agree to share my Medical Record info with Viel Cornwell</p>
-        <button>I Agree</button>
+        <button onClick={(e) => this.handleClick(e)}>
+          I Agree</button>
 
       </div>
     );

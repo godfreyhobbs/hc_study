@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 
 class ScreeningResults extends Component {
+
+  handleClick() {
+    this.props.callback("Questions");
+  }
+
   render() {
     return (
       <div>
         <h1 className="App-title">Screening Results</h1>
         <p>Congratulations! You are eligible for this study.</p>
-        <button>Start Questionnaire</button>
+        <button onClick={(e) => this.handleClick(e)}>
+          Start Questionnaire</button>
       </div>
     );
   }

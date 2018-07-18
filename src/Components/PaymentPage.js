@@ -3,7 +3,13 @@ import Header from './Header';
 import '../App.css';
 
 class PaymentPage extends Component {
-  render() {
+
+
+  handleClick() {
+    this.props.callback("GrantAccess");
+  }
+
+    render() {
     return (
       <div>
         <Header text="Payment"></Header>

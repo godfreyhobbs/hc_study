@@ -8,6 +8,9 @@ import linniaRecordsHub from './contracts/LinniaRecords.json';
 import StartPage from "./Components/StartPage";
 import MainHeader from "./Components/Header";
 import ScreeningResults from "./Components/ScreeningResults";
+import GrantAccessForScreening from "./Components/GrantAccessForScreening";
+import QuestionsPage from "./Components/QuestionsPage";
+import PaymentPage from "./Components/PaymentPage";
 
 class App extends Component {
   constructor(props) {
@@ -118,7 +121,14 @@ class App extends Component {
          <MainHeader/>
          {(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage}/>}
          {(this.state.currentPage === 'GrantAccess') &&
+         <GrantAccessForScreening callback={this.setCurrentPage}/>}
+         {(this.state.currentPage === 'ScreeningResults') &&
          <ScreeningResults callback={this.setCurrentPage}/>}
+         {(this.state.currentPage === 'Questions') &&
+         <QuestionsPage callback={this.setCurrentPage}/>}
+         {(this.state.currentPage === 'Payment') &&
+         <PaymentPage callback={this.setCurrentPage}/>}
+
        </div>
     );
   }
