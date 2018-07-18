@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import '../App.css';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { css } from 'glamor';
 
 class GrantAccessForScreening extends Component {
 
@@ -15,19 +19,35 @@ class GrantAccessForScreening extends Component {
 
   handleClick() {
     //dummy dummyDataUri
+    toast("😎  😎 😎  Wow so easy !!!! 🦄 🦄 🦄",{ autoClose: 90000,
+      position:'top-center',  bodyClassName: css({
+        fontSize: '60px'
+      }),
+    });
     const dummyDataUri = 'Qmf4vJySpRoexvPgmiokbsC5p3UjNVs38Dz9TvdDdmAqQP'
     this.props.permissionsInstance.grantAccess(this.state.dataHash, this.state.viewerAddress, dummyDataUri, {
       from: this.props.accounts[0]
     })
        .then(result => {
+         toast.dismiss();
          this.props.callback("ScreeningResults")
-       }).catch(console.error);
+       })
+       .catch(result => {
+         console.error(result);
+         toast.dismiss();
+         toast("ERROR"+result, { autoClose: 90000,
+           position:'top-center',  bodyClassName: css({
+             fontSize: '20px'
+           })});
+       });
 
   }
 
   render() {
     return (
        <div>
+         <ToastContainer/>
+
          <div className="terms-and-conditions">
            <p>Some information to grant access to Viel Cornwell to use your data.</p>
            <p>Something about you understand how we will use data, when and where</p>
