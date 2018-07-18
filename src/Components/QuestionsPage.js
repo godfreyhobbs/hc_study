@@ -7,11 +7,11 @@ class QuestionsPage extends Component {
     return (
       <div>
         <Header text="Questions"></Header>
-        <div>Google Form</div>
+        <div>Insert Google Form here</div>
         <button>Submit</button>
       </div>
     );
   }
 }
 
-export default QuestionsPages;
+export default QuestionsPage;
