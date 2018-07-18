@@ -9,11 +9,9 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-
-
 it('renders correctly', () => {
   const tree = renderer
-.create(<App page="http://www.facebook.com">Facebook</App>)
-   .toJSON();
-expect(tree).toMatchSnapshot();
+    .create(<App page="http://www.facebook.com">Facebook</App>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
