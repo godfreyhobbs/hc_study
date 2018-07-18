@@ -12,7 +12,6 @@ class PaymentPage extends Component {
     render() {
     return (
       <div>
-        <Header text="Payment"></Header>
         <div>
           <h1>Promise of Payment</h1>
           <p>You will be paid to account {this.props.account} within 2 business days.</p>
