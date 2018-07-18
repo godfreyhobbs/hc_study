@@ -3,13 +3,26 @@ import '../App.css';
 
 class GrantAccessForScreening extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dataHash: this.props.searchResultJSON.dataHash,
+      viewerAddress: '0x25c63834a9d3cd3c221b7cfbf6b1a02bdffcf0d9',
+    }
+
+  }
+
   handleClick() {
-    // this.props.linniaPermissionsInstance;
-    // this.props.web3
-    // this.props.accounts
+    //dummy dummyDataUri
+    const dummyDataUri = 'Qmf4vJySpRoexvPgmiokbsC5p3UjNVs38Dz9TvdDdmAqQP'
+    this.props.permissionsInstance.grantAccess(this.state.dataHash, this.state.viewerAddress, dummyDataUri, {
+      from: this.props.accounts[0]
+    })
+       .then(result => {
+         this.props.callback("ScreeningResults")
+       }).catch(console.error);
 
-
-    this.props.callback("ScreeningResults");
   }
 
   render() {
@@ -23,8 +36,13 @@ class GrantAccessForScreening extends Component {
 
          <div className="medical-summary">
            <div className="FHIR-docs">FHIR Docs</div>
-           <div className="medical-overview">Medical Record Summary</div>
+           <div className="medical-overview">Medical Record Summary FHIR Docs</div>
            <div className="hospital">Joe's Hospital</div>
+           <div className="FHIR-docs">Metadata:{this.props.searchResultJSON.metadata}</div>
+           <div className="medical-overview">IRIS Score: {this.props.searchResultJSON.irisScore}</div>
+           <div className="medical-overview">Sig Count: {this.props.searchResultJSON.sigCount}</div>
+           <div className="medical-overview">Created At: {this.props.searchResultJSON.createdAt}</div>
+           <div className="medical-overview">DataHash: {this.props.searchResultJSON.dataHash}</div>
          </div>
 
          <p>Hey, man I understand and agree to share my Medical Record info with Viel Cornwell</p>

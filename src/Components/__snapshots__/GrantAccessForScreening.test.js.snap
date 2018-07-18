@@ -26,12 +26,42 @@ exports[`renders correctly 1`] = `
     <div
       className="medical-overview"
     >
-      Medical Record Summary
+      Medical Record Summary FHIR Docs
     </div>
     <div
       className="hospital"
     >
       Joe's Hospital
+    </div>
+    <div
+      className="FHIR-docs"
+    >
+      Metadata:
+      Angel Marvin
+    </div>
+    <div
+      className="medical-overview"
+    >
+      IRIS Score: 
+      1
+    </div>
+    <div
+      className="medical-overview"
+    >
+      Sig Count: 
+      1
+    </div>
+    <div
+      className="medical-overview"
+    >
+      Created At: 
+      2018-07-18T16:22:39.340Z
+    </div>
+    <div
+      className="medical-overview"
+    >
+      DataHash: 
+      0x7f92099bdee271c19498a5ff4d19d42c02c84c4b092b7ac2a50bbc0947cc2128
     </div>
   </div>
   <p>

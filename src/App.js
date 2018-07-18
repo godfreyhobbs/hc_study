@@ -77,7 +77,7 @@ class App extends Component {
            .then(response => response.json())
            .then(myJson => {
              console.log(myJson);
-             const searchResultJSON = myJson;
+             const searchResultJSON = myJson[0];
              this.setState({searchResultJSON});
 
              linniaHub
