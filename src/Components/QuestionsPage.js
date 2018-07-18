@@ -11,10 +11,10 @@ class QuestionsPage extends Component {
   render() {
     return (
        <div>
-         <IframeQuestions></IframeQuestions>
          <button onClick={(e) => this.handleClick(e)}>
            Get Your Money!
          </button>
+         <IframeQuestions></IframeQuestions>
        </div>
     );
   }
