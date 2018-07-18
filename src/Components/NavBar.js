@@ -18,10 +18,10 @@ class NavBar extends Component {
           <NavItem eventKey={2} href="#">
             Department of Genetic Medicine
           </NavItem>
-          <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+          <NavDropdown eventKey={3} title="More Information" id="basic-nav-dropdown">
             <MenuItem eventKey={3.1}>About Us</MenuItem>
             <MenuItem eventKey={3.2}>Staff</MenuItem>
-            <MenuItem eventKey={3.3}>Wu Tang Clan</MenuItem>
+            <MenuItem eventKey={3.3}>Contact</MenuItem>
             <MenuItem divider />
             <MenuItem eventKey={3.4}>Home Page</MenuItem>
           </NavDropdown>
