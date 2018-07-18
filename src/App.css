@@ -13,6 +13,7 @@
   height: 150px;
   padding: 20px;
   color: black;
+  margin-bottom: 20px;
 }
 
 .App-title {
@@ -26,6 +27,11 @@
 .medical-summary {
   text-align: left;
   padding-left: 30%;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
 }
 
 button {
@@ -50,6 +56,9 @@ button:hover {
   margin:0 auto;
 }
 
+.medical-overview, .hospital, .FHIR-docs {
+  font-size: 18px;
+}
 
 
 @keyframes App-logo-spin {
