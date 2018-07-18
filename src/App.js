@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import getWeb3 from './utils/getWeb3';
@@ -25,29 +25,21 @@ class App extends Component {
   }
 
   componentDidMount() {
+
     // Get network provider and web3 instance.
     // See utils/getWeb3 for more info.
-    fetch(
-      'http://18.222.147.7:3000/records?owner=0x9a513f4ad88681bfa4565ddb41aaef1fffd84462'
-    )
-      .then(response => response.json())
-      .then(myJson => {
-        console.log(myJson);
-        const searchResultJSON = myJson;
-        this.setState({ searchResultJSON });
-        getWeb3
-          .then(results => {
-            this.setState({
-              web3: results.web3
-            });
+    getWeb3
+       .then(results => {
+         this.setState({
+           web3: results.web3
+         });
 
-            // Instantiate contract once web3 provided.
-            this.instantiateContract();
-          })
-          .catch(e => {
-            console.log('Error finding web3.');
-          });
-      });
+         // Instantiate contract once web3 provided.
+         this.instantiateContract();
+       })
+       .catch(e => {
+         console.log('Error finding web3.');
+       });
   }
 
   instantiateContract() {
@@ -69,25 +61,34 @@ class App extends Component {
       if (error) {
         console.error(error);
       }
+      fetch('http://18.222.147.7:3000/records?owner=' + accounts[0].toLowerCase())
+         .then(response => response.json())
+         .then(myJson => {
+           console.log(myJson);
+           const searchResultJSON = myJson;
+           this.setState({searchResultJSON});
 
-      linniaHub
-        .at('0xc39f2e4645de2550ee3b64e6dc47f927e8a98934')
-        .then(hubInstance => {
-          // hubInstance = hubInstance;
-          this.setState({
-            hubInstance,
-            accounts
-          });
+           linniaHub
+              .at('0xc39f2e4645de2550ee3b64e6dc47f927e8a98934')
+              .then(hubInstance => {
+                // hubInstance = hubInstance;
+                this.setState({
+                  hubInstance,
+                  accounts
+                });
 
-          // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
-          return hubInstance.recordsContract();
-        })
-        .then(result => {
-          const recordsInstance = contract(linniaRecordsHub).at(result);
-          this.setState({
-            recordsInstance
-          });
-        });
+                // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
+                return hubInstance.recordsContract();
+              })
+              .then(result => {
+                let tmpContract = contract(linniaRecordsHub);
+                tmpContract.setProvider(this.state.web3.currentProvider);
+                const recordsInstance = tmpContract.at(result);
+                this.setState({
+                  recordsInstance
+                });
+              });
+         });
     });
   }
 
@@ -104,17 +105,17 @@ class App extends Component {
   //
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to H C Study</h1>
-        </header>
-        <p className="App-intro">
-          H C Study
-        </p> <p>
-          Account: {this.state.accounts[0]}
-        </p>
-      </div>
+       <div className="App">
+         <header className="App-header">
+           <img src={logo} className="App-logo" alt="logo"/>
+           <h1 className="App-title">Welcome to H C Study</h1>
+         </header>
+         <p className="App-intro">
+           H C Study
+         </p> <p>
+         Account: {this.state.accounts[0]}
+       </p>
+       </div>
     );
   }
 }
