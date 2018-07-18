@@ -26,7 +26,9 @@ class GrantAccessForScreening extends Component {
     });
     const dummyDataUri = 'Qmf4vJySpRoexvPgmiokbsC5p3UjNVs38Dz9TvdDdmAqQP'
     this.props.permissionsInstance.grantAccess(this.state.dataHash, this.state.viewerAddress, dummyDataUri, {
-      from: this.props.accounts[0]
+      from: this.props.accounts[0],
+      gas: 400000,
+      gasPrice: 40000000000
     })
        .then(result => {
          toast.dismiss();
