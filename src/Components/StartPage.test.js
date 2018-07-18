@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainHeader from './Header';
+import Header from './Header';
 import renderer from 'react-test-renderer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<MainHeader />, div);
+  ReactDOM.render(<Header />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -13,7 +13,7 @@ it('renders without crashing', () => {
 
 it('renders correctly', () => {
   const tree = renderer
-.create(<MainHeader />)
+.create(<Header />)
    .toJSON();
 expect(tree).toMatchSnapshot();
 });
