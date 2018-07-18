@@ -7,7 +7,7 @@ import linniaHubJSON from './contracts/LinniaHub.json';
 // import linniaPermissions from './contracts/LinniaPermissions.json';
 import linniaRecordsHub from './contracts/LinniaRecords.json';
 
-require('dotenv').config();
+// require('dotenv').config();
 
 class App extends Component {
   constructor(props) {
