@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import getWeb3 from './utils/getWeb3';
 import contract from 'truffle-contract';
 import linniaHubJSON from './contracts/LinniaHub.json';
 // import linniaPermissions from './contracts/LinniaPermissions.json';
 import linniaRecordsHub from './contracts/LinniaRecords.json';
+import StartPage from "./Components/StartPage";
+import MainHeader from "./Components/Header";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends Component {
 
     this.state = {
       publicEncryptKey: '',
+      currentPage: 'Start',
       destinationAddrs: [],
       web3: null,
       hubInstance: null,
@@ -108,15 +110,8 @@ class App extends Component {
   render() {
     return (
        <div className="App">
-         <header className="App-header">
-           <img src={logo} className="App-logo" alt="logo"/>
-           <h1 className="App-title">Welcome to H C Study</h1>
-         </header>
-         <p className="App-intro">
-           H C Study
-         </p> <p>
-         Account: {this.state.accounts[0]}
-       </p>
+         <MainHeader/>
+         {(this.state.currentPage === 'Start') && <StartPage/>}
        </div>
     );
   }
