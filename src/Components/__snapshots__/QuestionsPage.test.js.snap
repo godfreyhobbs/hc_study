@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <h1
+      className="App-title"
+    >
+      Welcome to the Viel Cornwell Hookah Study
+    </h1>
+  </header>
+  <div>
+    Insert Google Form here
+  </div>
+  <button>
+    Submit
+  </button>
+</div>
+`;
