@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <header
+    className="App-header"
+  >
+    <img
+      alt="logo"
+      className="App-logo"
+      src="logo.svg"
+    />
+    <h1
+      className="App-title"
+    >
+      Welcome to the Viel Cornwell Hookah Study
+    </h1>
+  </header>
+  <div>
+    <h1>
+      Promise of Payment
+    </h1>
+    <p>
+      You will be paid to account 
+       within 2 business days.
+    </p>
+    <p>
+      Study Number: 12345
+    </p>
+    <p>
+      Participant ID: 123
+    </p>
+  </div>
+</div>
+`;
