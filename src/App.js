@@ -132,17 +132,7 @@ class App extends Component {
        })
 
   }
-  //
-  // updateAddrsBalances = async accounts => {
-  //   await _.forEach(accounts, async addr => {
-  //     this.state.web3.eth.getBalance(addr, (err, bal) => {
-  //       let newBalances = this.state.balances;
-  //       newBalances[addr] = bal.toString();
-  //       this.setState({balances: newBalances});
-  //     });
-  //   });
-  // };
-  //
+ 
   render() {
     return (
        <div className="App">
