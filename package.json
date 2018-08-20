@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "bignumber.js": "^7.2.1",
+    "eth-sig-util": "^2.0.1",
+    "ethereumjs-util": "^5.2.0",
+    "ethjs": "^0.4.0",
     "glamor": "^2.20.40",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",

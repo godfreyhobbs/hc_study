@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
-import './App.css';
-import getWeb3 from './utils/getWeb3';
-import contract from 'truffle-contract';
-import linniaHubJSON from './contracts/LinniaHub.json';
-import linniaPermissionsJSON from './contracts/LinniaPermissions.json';
+import React, { Component } from "react";
+import "./App.css";
+import Consent from "./Components/Consent";
+import getWeb3 from "./utils/getWeb3";
+import contract from "truffle-contract";
+import linniaHubJSON from "./contracts/LinniaHub.json";
+import linniaPermissionsJSON from "./contracts/LinniaPermissions.json";
 // import linniaRecordsHub from './contracts/LinniaRecords.json';
 import StartPage from "./Components/StartPage";
 import MainHeader from "./Components/Header";
@@ -11,6 +12,11 @@ import ScreeningResults from "./Components/ScreeningResults";
 import GrantAccessForScreening from "./Components/GrantAccessForScreening";
 import QuestionsPage from "./Components/QuestionsPage";
 import PaymentPage from "./Components/PaymentPage";
+import ethUtil from "ethereumjs-util";
+import Eth from "ethjs";
+import consentTxt from "./consent.json";
+
+window.Eth = Eth
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +31,8 @@ class App extends Component {
       recordsInstance: null,
       permissionsInstance: null,
       accounts: [],
-      searchResultJSON: {}
+      searchResultJSON: {},
+      requestConsent: true
     };
   }
 
@@ -105,6 +112,26 @@ class App extends Component {
     });
   }
 
+  consent = () => {
+
+    const constentText = consentTxt.text; //'This Informed Consent Form has two parts:• Information Sheet (to share information about the research with you)• Certificate of Consent (for signatures if you agree to take part)You will be given a copy of the full Informed Consent Form';
+    var msg = ethUtil.bufferToHex(new Buffer(constentText, 'utf8'))
+
+    var from = this.state.web3.eth.accounts[0]
+
+    console.log('CLICKED, SENDING PERSONAL SIGN REQ')
+    var params = [from, msg]
+
+    // Now with Eth.js
+    var eth = new Eth(this.state.web3.currentProvider)
+
+    eth.personal_sign(msg, from)
+       .then((signed) => {
+         console.log('Signed!  Result is: ', signed)
+         this.setState({requestConsent:false})
+       })
+
+  }
   //
   // updateAddrsBalances = async accounts => {
   //   await _.forEach(accounts, async addr => {
@@ -120,7 +147,8 @@ class App extends Component {
     return (
        <div className="App">
          <MainHeader/>
-         {(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage}/>}
+         {(this.state.requestConsent) && <Consent consent={this.consent}/>}
+         {(!this.state.requestConsent)&&(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage}/>}
          {(this.state.currentPage === 'GrantAccess') &&
          <GrantAccessForScreening callback={this.setCurrentPage} web3={this.state.web}
                                   permissionsInstance={this.state.permissionsInstance}
