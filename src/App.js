@@ -3,8 +3,11 @@ import "./App.css";
 import Consent from "./Components/Consent";
 import getWeb3 from "./utils/getWeb3";
 import contract from "truffle-contract";
-import linniaHubJSON from "./contracts/LinniaHub.json";
-import linniaPermissionsJSON from "./contracts/LinniaPermissions.json";
+import linniaHubJSON from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaHub.json';
+// import LinniaUsers from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaUsers.json';
+// import LinniaRecords from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaRecords.json';
+import linniaPermissionsJSON from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaPermissions.json';
+
 // import linniaRecordsHub from './contracts/LinniaRecords.json';
 import StartPage from "./Components/StartPage";
 import MainHeader from "./Components/Header";
@@ -59,7 +62,7 @@ class App extends Component {
   }
 
   instantiateContract() {
-    const LinniaHubRopstenAddress = '0xc39f2e4645de2550ee3b64e6dc47f927e8a98934';
+    const LinniaHubRopstenAddress = '0x177bf15e7e703f4980b7ef75a58dc4198f0f1172';
 
     /*
      * SMART CONTRACT EXAMPLE
@@ -90,13 +93,10 @@ class App extends Component {
              linniaHub
                 .at(LinniaHubRopstenAddress)
                 .then(hubInstance => {
-                  // hubInstance = hubInstance;
                   this.setState({
                     hubInstance,
                     accounts
                   });
-
-                  // this.updateAddrsBalances(accounts.concat(carolAddr, bobAddr, instance.address));
                   return hubInstance.permissionsContract();
                 })
                 .then(result => {
@@ -132,7 +132,7 @@ class App extends Component {
        })
 
   }
- 
+
   render() {
     return (
        <div className="App">

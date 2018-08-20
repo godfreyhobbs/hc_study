@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@linniaprotocol/linnia-smart-contracts": "^0.1.1",
     "bignumber.js": "^7.2.1",
     "eth-sig-util": "^2.0.1",
     "ethereumjs-util": "^5.2.0",
