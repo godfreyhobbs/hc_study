@@ -70,6 +70,25 @@ exports[`renders correctly 1`] = `
   <p>
     I understand and agree to the above statements
   </p>
+  <div
+    className="medical-overview"
+  >
+    <label
+      htmlFor="privateKey"
+    >
+      Enter the private encryption key for this data:
+    </label>
+    <div>
+      <input
+        id="privateKey"
+        onChange={[Function]}
+        required={true}
+        size={64}
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
   <button
     onClick={[Function]}
   >

@@ -36,133 +36,158 @@ exports[`renders correctly 1`] = `
         >
           State College Medical School
         </a>
+        <button
+          className="navbar-toggle collapsed"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="sr-only"
+          >
+            Toggle navigation
+          </span>
+          <span
+            className="icon-bar"
+          />
+          <span
+            className="icon-bar"
+          />
+          <span
+            className="icon-bar"
+          />
+        </button>
       </div>
-      <ul
-        className="nav navbar-nav"
-        role={null}
+      <div
+        aria-expanded={null}
+        className="navbar-collapse collapse"
       >
-        <li
-          className=""
-          role="presentation"
-          style={undefined}
+        <ul
+          className="nav navbar-nav navbar-right"
+          role={null}
         >
-          <a
-            href="#"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
+          <li
+            className=""
+            role="presentation"
+            style={undefined}
           >
-            Department of Epidemiology
-          </a>
-        </li>
-        <li
-          className=""
-          role="presentation"
-          style={undefined}
-        >
-          <a
-            href="#"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-          >
-            Department of Genetic Medicine
-          </a>
-        </li>
-        <li
-          className="dropdown"
-          style={undefined}
-        >
-          <a
-            aria-expanded={false}
-            aria-haspopup={true}
-            className="dropdown-toggle"
-            href="#"
-            id="basic-nav-dropdown"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="button"
-          >
-            More Information
-             
-            <span
-              className="caret"
-            />
-          </a>
-          <ul
-            aria-labelledby="basic-nav-dropdown"
-            className="dropdown-menu"
-            role="menu"
-          >
-            <li
-              className=""
-              role="presentation"
-              style={undefined}
-            >
-              <a
-                href="#"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
-                tabIndex="-1"
-              >
-                About Us
-              </a>
-            </li>
-            <li
-              className=""
-              role="presentation"
-              style={undefined}
-            >
-              <a
-                href="#"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
-                tabIndex="-1"
-              >
-                Staff
-              </a>
-            </li>
-            <li
-              className=""
-              role="presentation"
-              style={undefined}
-            >
-              <a
-                href="#"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
-                tabIndex="-1"
-              >
-                Contact
-              </a>
-            </li>
-            <li
-              className="divider"
+            <a
+              href="#"
+              onClick={[Function]}
               onKeyDown={[Function]}
-              role="separator"
-              style={undefined}
-            />
-            <li
-              className=""
-              role="presentation"
-              style={undefined}
+              role="button"
             >
-              <a
-                href="#"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                role="menuitem"
-                tabIndex="-1"
+              Department of Epidemiology
+            </a>
+          </li>
+          <li
+            className=""
+            role="presentation"
+            style={undefined}
+          >
+            <a
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+            >
+              Department of Genetic Medicine
+            </a>
+          </li>
+          <li
+            className="dropdown"
+            style={undefined}
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle"
+              href="#"
+              id="basic-nav-dropdown"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+            >
+              More Information
+               
+              <span
+                className="caret"
+              />
+            </a>
+            <ul
+              aria-labelledby="basic-nav-dropdown"
+              className="dropdown-menu"
+              role="menu"
+            >
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
               >
-                Home Page
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  About Us
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Staff
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Contact
+                </a>
+              </li>
+              <li
+                className="divider"
+                onKeyDown={[Function]}
+                role="separator"
+                style={undefined}
+              />
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Home Page
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </div>
