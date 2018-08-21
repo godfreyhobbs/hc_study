@@ -19,9 +19,9 @@ class GrantAccessForScreening extends Component {
 
   handleClick() {
     //dummy dummyDataUri
-    toast("😎  😎 😎  Wow so easy !!!! 🦄 🦄 🦄",{ autoClose: 90000,
+    toast("You transaction is being processed. This may take several minutes.",{ autoClose: 90000,
       position:'top-center',  bodyClassName: css({
-        fontSize: '60px',
+        fontSize: '22px',
       }),
     });
     const dummyDataUri = 'Qmf4vJySpRoexvPgmiokbsC5p3UjNVs38Dz9TvdDdmAqQP';
@@ -64,7 +64,7 @@ class GrantAccessForScreening extends Component {
           <div className='medical-overview'>IRIS Score: {this.props.searchResultJSON.irisScore}</div>
           <div className='medical-overview'>Sig Count: {this.props.searchResultJSON.sigCount}</div>
           <div className='medical-overview'>Created At: {this.props.searchResultJSON.createdAt}</div>
-          <div className='medical-overview'>DataHash: {this.props.searchResultJSON.dataHash}</div>
+          <div className='medical-overview'>Record DataHash: {this.props.searchResultJSON.dataHash}</div>
         </div>
 
         <p>I understand and agree to the above statements</p>
