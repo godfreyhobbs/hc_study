@@ -9,13 +9,13 @@ exports[`renders correctly 1`] = `
     className="terms-and-conditions"
   >
     <p>
-      Some information to grant access to Viel Cornwell to use your data.
+      Some information to grant access to State College to use your health data to screen for study eligibility.
     </p>
     <p>
-      Something about you understand how we will use data, when and where
+      Data will be used by researches for the study
     </p>
     <p>
-      We won't hold your data or something, but look at it to see if you are eligble, etc.
+      The researchers will not retain or share your data
     </p>
   </div>
   <div
@@ -68,7 +68,7 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <p>
-    Hey, man I understand and agree to share my Medical Record info with Viel Cornwell
+    I understand and agree to the above statements
   </p>
   <button
     onClick={[Function]}

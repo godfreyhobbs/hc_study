@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
     src="logo.svg"
   />
   <h2>
-    Welcome to the Viel Cornwell Hookah Study
+    Welcome to the State College Hookah Study
   </h2>
 </header>
 `;

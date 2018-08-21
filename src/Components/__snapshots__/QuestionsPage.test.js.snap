@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   <button
     onClick={[Function]}
   >
-    Get Your Money!
+    Completed - proceed to the payment screen
   </button>
   <div>
     <iframe
