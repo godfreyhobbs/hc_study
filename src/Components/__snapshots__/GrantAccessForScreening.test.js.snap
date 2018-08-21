@@ -63,7 +63,7 @@ exports[`renders correctly 1`] = `
     <div
       className="medical-overview"
     >
-      DataHash: 
+      Record DataHash: 
       0x7f92099bdee271c19498a5ff4d19d42c02c84c4b092b7ac2a50bbc0947cc2128
     </div>
   </div>
