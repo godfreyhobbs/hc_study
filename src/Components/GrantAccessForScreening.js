@@ -11,27 +11,42 @@ class GrantAccessForScreening extends Component {
     super(props);
 
     this.state = {
+      value: '',
       dataHash: this.props.searchResultJSON.dataHash,
+      // This represents the State University researcher
       viewerAddress: '0x25c63834a9d3cd3c221b7cfbf6b1a02bdffcf0d9',
     };
 
   }
 
+  handleChange = (event) => {
+    this.setState({value: event.target.value});
+  }
+
   handleClick() {
-    //dummy dummyDataUri
-    toast("You transaction is being processed. This may take several minutes.",{ autoClose: 90000,
+    toast("Once you confirm, your transaction will be processed. This may take several minutes.",{ autoClose: 90000,
       position:'top-center',  bodyClassName: css({
         fontSize: '22px',
       }),
     });
-    const dummyDataUri = 'Qmf4vJySpRoexvPgmiokbsC5p3UjNVs38Dz9TvdDdmAqQP';
-    this.props.permissionsInstance.grantAccess(this.state.dataHash, this.state.viewerAddress, dummyDataUri, {
+
+    // Here we are calling the Permission Smart contract Grant access method.
+    this.props.permissionsInstance.grantAccess(this.state.dataHash, this.state.viewerAddress, this.props.searchResultJSON.dataUri, {
       from: this.props.accounts[0],
-      gas: 400000,
+      // TODO: for a real app this is liekly way too much gas.
+      gas: 700000,
       gasPrice: 40000000000,
     })
        .then(result => {
          toast.dismiss();
+         /*
+          TODO: IF this was a real app we would do the following:
+            1. fetch dataUri from IPFS
+            2. decrypt (do NOT store resulting plain text in a cookie or local storage)
+            3. Run eligbility algo on the decrypted plan text
+            4. Remove all code references to the private key and plain text in the data (maybe force a page refresh)
+           */
+
          this.props.callback("ScreeningResults");
        })
        .catch(result => {
@@ -46,6 +61,7 @@ class GrantAccessForScreening extends Component {
   }
 
   render() {
+    //TODO: Use real meta data. Here we are faking the data fields such as hostipal
     return (
       <div>
         <ToastContainer />
@@ -68,6 +84,14 @@ class GrantAccessForScreening extends Component {
         </div>
 
         <p>I understand and agree to the above statements</p>
+
+        <div className='medical-overview'>
+          <label htmlFor="privateKey">Enter the private encryption key for this data:</label>
+          <div>
+            <input id="privateKey" type="password" value={this.state.value} onChange={this.handleChange} size={64} required />
+          </div>
+        </div>
+
         <button onClick={(e) => this.handleClick(e)}>
            I Agree
          </button>

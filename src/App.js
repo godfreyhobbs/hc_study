@@ -79,6 +79,7 @@ class App extends Component {
     const LinniaUpgradeHub = contract(linniaHubJSON);
     LinniaUpgradeHub.setProvider(this.state.web3.currentProvider);
 
+    // Basic interaction with web3
     this.state.web3.eth.getAccounts((error, accounts) => {
       if (error) {
         console.error(error);
@@ -128,6 +129,7 @@ class App extends Component {
        .then((signed) => {
          console.log('Signed!  Result is: ', signed);
          this.setState({requestConsent:false});
+         // TODO: Store this to allow access to both parties
        });
 
   }
