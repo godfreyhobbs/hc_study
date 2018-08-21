@@ -135,7 +135,7 @@ class App extends Component {
     return (
       <div className='App'>
         <MainHeader />
-        {/*web3 require metamask*/}
+        {/*web3 requires metamask*/}
         {(this.state.web3 === null) && <div><p>ERROR METAMASK LOCKED OR MISSING</p></div>}
         {(this.state.web3 !== null) && (this.state.requestConsent) && <Consent consent={this.consent} />}
         {(!this.state.requestConsent)&&(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage} />}
