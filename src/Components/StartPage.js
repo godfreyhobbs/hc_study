@@ -11,7 +11,7 @@ class StartPage extends Component {
   render() {
     return (
       <div>
-        <StudyDescription></StudyDescription>
+        <StudyDescription />
         <button onClick={(e) => this.handleClick(e)}>
           Start Screening
         </button>

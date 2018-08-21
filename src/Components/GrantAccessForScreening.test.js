@@ -6,7 +6,7 @@ const dummyJSON = {"dataHash":"0x7f92099bdee271c19498a5ff4d19d42c02c84c4b092b7ac
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<GrantAccessForScreening searchResultJSON={dummyJSON}/>, div);
+  ReactDOM.render(<GrantAccessForScreening searchResultJSON={dummyJSON} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -14,7 +14,7 @@ it('renders without crashing', () => {
 
 it('renders correctly', () => {
   const tree = renderer
-.create(<GrantAccessForScreening searchResultJSON={dummyJSON}/>)
+.create(<GrantAccessForScreening searchResultJSON={dummyJSON} />)
    .toJSON();
 expect(tree).toMatchSnapshot();
 });

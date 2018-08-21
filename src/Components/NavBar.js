@@ -7,17 +7,17 @@ class NavBar extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home">Viel Cornwell Medical School</a>
+            <a href='#home'>Viel Cornwell Medical School</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem eventKey={1} href="#">
+          <NavItem eventKey={1} href='#'>
             Department of Epidemiology
           </NavItem>
-          <NavItem eventKey={2} href="#">
+          <NavItem eventKey={2} href='#'>
             Department of Genetic Medicine
           </NavItem>
-          <NavDropdown eventKey={3} title="More Information" id="basic-nav-dropdown">
+          <NavDropdown eventKey={3} title='More Information' id='basic-nav-dropdown'>
             <MenuItem eventKey={3.1}>About Us</MenuItem>
             <MenuItem eventKey={3.2}>Staff</MenuItem>
             <MenuItem eventKey={3.3}>Contact</MenuItem>
