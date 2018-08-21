@@ -4,10 +4,10 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 class NavBar extends Component {
   render() {
     return (
-      <Navbar>
+      <Navbar fixedBottom>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href='#home'>Viel Cornwell Medical School</a>
+            <a href='#home'>State College Medical School</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>

@@ -16,6 +16,7 @@ import PaymentPage from "./Components/PaymentPage";
 import ethUtil from "ethereumjs-util";
 import Eth from "ethjs";
 import consentTxt from "./consent.json";
+import NavBar from "./Components/NavBar";
 
 window.Eth = Eth;
 
@@ -83,7 +84,7 @@ class App extends Component {
         console.error(error);
       } else {
         let userAccount = accounts[0].toLowerCase();
-        fetch('http://18.222.147.7:3000/records?owner=' + userAccount)
+        fetch('https://linniaserver.com/records?owner=' + userAccount)
            .then(response => response.json())
            .then(myJson => {
              console.log(myJson);
@@ -149,7 +150,7 @@ class App extends Component {
         <QuestionsPage callback={this.setCurrentPage} />}
         {(this.state.currentPage === 'Payment') &&
         <PaymentPage callback={this.setCurrentPage} />}
-
+        <NavBar />
       </div>
     );
   }

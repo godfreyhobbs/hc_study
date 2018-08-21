@@ -21,5 +21,149 @@ exports[`renders correctly 1`] = `
       ERROR METAMASK LOCKED OR MISSING
     </p>
   </div>
+  <nav
+    className="navbar navbar-default navbar-fixed-bottom"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="navbar-header"
+      >
+        <a
+          className="navbar-brand"
+          href="#home"
+        >
+          State College Medical School
+        </a>
+      </div>
+      <ul
+        className="nav navbar-nav"
+        role={null}
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+          >
+            Department of Epidemiology
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+          >
+            Department of Genetic Medicine
+          </a>
+        </li>
+        <li
+          className="dropdown"
+          style={undefined}
+        >
+          <a
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="dropdown-toggle"
+            href="#"
+            id="basic-nav-dropdown"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+          >
+            More Information
+             
+            <span
+              className="caret"
+            />
+          </a>
+          <ul
+            aria-labelledby="basic-nav-dropdown"
+            className="dropdown-menu"
+            role="menu"
+          >
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                About Us
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Staff
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Contact
+              </a>
+            </li>
+            <li
+              className="divider"
+              onKeyDown={[Function]}
+              role="separator"
+              style={undefined}
+            />
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Home Page
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </div>
 `;
