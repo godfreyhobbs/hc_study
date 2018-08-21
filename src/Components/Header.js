@@ -6,7 +6,7 @@ class MainHeader extends Component {
     return (
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
-        <h2>Welcome to the Viel Cornwell Hookah Study</h2>
+        <h2>Welcome to the State College Hookah Study</h2>
       </header>
     );
   }

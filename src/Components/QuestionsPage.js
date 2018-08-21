@@ -12,7 +12,7 @@ class QuestionsPage extends Component {
     return (
       <div>
         <button onClick={(e) => this.handleClick(e)}>
-           Get Your Money!
+          Completed - proceed to the payment screen
          </button>
         <IframeQuestions />
       </div>

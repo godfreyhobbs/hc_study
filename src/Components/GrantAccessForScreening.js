@@ -51,9 +51,9 @@ class GrantAccessForScreening extends Component {
         <ToastContainer />
 
         <div className='terms-and-conditions'>
-          <p>Some information to grant access to Viel Cornwell to use your data.</p>
-          <p>Something about you understand how we will use data, when and where</p>
-          <p>We won't hold your data or something, but look at it to see if you are eligble, etc.</p>
+          <p>Some information to grant access to State College to use your health data to screen for study eligibility.</p>
+          <p>Data will be used by researches for the study</p>
+          <p>The researchers will not retain or share your data</p>
         </div>
 
         <div className='medical-summary'>
@@ -67,7 +67,7 @@ class GrantAccessForScreening extends Component {
           <div className='medical-overview'>DataHash: {this.props.searchResultJSON.dataHash}</div>
         </div>
 
-        <p>Hey, man I understand and agree to share my Medical Record info with Viel Cornwell</p>
+        <p>I understand and agree to the above statements</p>
         <button onClick={(e) => this.handleClick(e)}>
            I Agree
          </button>
