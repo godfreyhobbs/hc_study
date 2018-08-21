@@ -16,10 +16,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
       }
     );
     } else {
-      // DEBUGGING
-      console.log('No web3 instance injected, using Local web3.');
-
-      resolve({web3:null});
+      reject("No web3 instance injected, using Local web3.");
     }
   });
 });

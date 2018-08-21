@@ -6,7 +6,7 @@ import contract from "truffle-contract";
 import linniaHubJSON from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaHub.json';
 import linniaPermissionsJSON from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaPermissions.json';
 
-// import linniaRecordsHub from './contracts/LinniaRecords.json';
+
 import StartPage from "./Components/StartPage";
 import MainHeader from "./Components/Header";
 import ScreeningResults from "./Components/ScreeningResults";
@@ -51,7 +51,7 @@ class App extends Component {
          this.instantiateContract();
        })
        .catch(e => {
-         console.log('Error finding web3.');
+         console.log(e);
        });
   }
 
