@@ -4,8 +4,6 @@ import Consent from "./Components/Consent";
 import getWeb3 from "./utils/getWeb3";
 import contract from "truffle-contract";
 import linniaHubJSON from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaHub.json';
-// import LinniaUsers from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaUsers.json';
-// import LinniaRecords from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaRecords.json';
 import linniaPermissionsJSON from '@linniaprotocol/linnia-smart-contracts/build/contracts//LinniaPermissions.json';
 
 // import linniaRecordsHub from './contracts/LinniaRecords.json';
