@@ -112,11 +112,9 @@ class App extends Component {
 
     const constentText = consentTxt.text; //'This Informed Consent Form has two parts:• Information Sheet (to share information about the research with you)• Certificate of Consent (for signatures if you agree to take part)You will be given a copy of the full Informed Consent Form';
     var msg = ethUtil.bufferToHex(new Buffer(constentText, 'utf8'));
-
     var from = this.state.web3.eth.accounts[0];
 
     console.log('CLICKED, SENDING PERSONAL SIGN REQ');
-    var params = [from, msg];
 
     // Now with Eth.js
     var eth = new Eth(this.state.web3.currentProvider);
