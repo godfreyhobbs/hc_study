@@ -86,9 +86,9 @@ class GrantAccessForScreening extends Component {
         <p>I understand and agree to the above statements</p>
 
         <div className='medical-overview'>
-          <label htmlFor="privateKey">Enter the private encryption key for this data:</label>
+          <label htmlFor='privateKey'>Enter the private encryption key for this data:</label>
           <div>
-            <input id="privateKey" type="password" value={this.state.value} onChange={this.handleChange} size={64} required />
+            <input id='privateKey' type='password' value={this.state.value} onChange={this.handleChange} size={64} required />
           </div>
         </div>
 
