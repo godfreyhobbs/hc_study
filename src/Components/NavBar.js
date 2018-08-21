@@ -9,8 +9,10 @@ class NavBar extends Component {
           <Navbar.Brand>
             <a href='#home'>State College Medical School</a>
           </Navbar.Brand>
+          <Navbar.Toggle />
         </Navbar.Header>
-        <Nav>
+        <Navbar.Collapse>
+        <Nav pullRight>
           <NavItem eventKey={1} href='#'>
             Department of Epidemiology
           </NavItem>
@@ -25,6 +27,7 @@ class NavBar extends Component {
             <MenuItem eventKey={3.4}>Home Page</MenuItem>
           </NavDropdown>
         </Nav>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
