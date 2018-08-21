@@ -62,17 +62,21 @@ class App extends Component {
   instantiateContract() {
 
     /*
-     * SMART CONTRACT EXAMPLE
+     * LINNIA SMART CONTRACT EXAMPLE
      *
      * Normally these functions would be called in the context of a
      * state management library like redux, but for convenience I've placed them here.
      */
+
+    // For debugging only
+    this.state.web3.version.getNetwork(console.log);
+
+    // The address on Ropsten.  This changes with each testnet release
     const LinniaHubRopstenAddress = '0x177bf15e7e703f4980b7ef75a58dc4198f0f1172';
 
-    const linniaHub = contract(linniaHubJSON);
-    linniaHub.setProvider(this.state.web3.currentProvider);
-
-    this.state.web3.version.getNetwork(console.log);
+    // First we nees to init the LinniaUpgradeHub
+    const LinniaUpgradeHub = contract(linniaHubJSON);
+    LinniaUpgradeHub.setProvider(this.state.web3.currentProvider);
 
     this.state.web3.eth.getAccounts((error, accounts) => {
       if (error) {
@@ -86,7 +90,7 @@ class App extends Component {
              const searchResultJSON = myJson[0];
              this.setState({searchResultJSON});
 
-             linniaHub
+             LinniaUpgradeHub
                 .at(LinniaHubRopstenAddress)
                 .then(hubInstance => {
                   this.setState({
@@ -131,7 +135,9 @@ class App extends Component {
     return (
       <div className='App'>
         <MainHeader />
-        {(this.state.requestConsent) && <Consent consent={this.consent} />}
+        {/*web3 require metamask*/}
+        {(this.state.web3 === null) && <div><p>ERROR METAMASK LOCKED OR MISSING</p></div>}
+        {(this.state.web3 !== null) && (this.state.requestConsent) && <Consent consent={this.consent} />}
         {(!this.state.requestConsent)&&(this.state.currentPage === 'Start') && <StartPage callback={this.setCurrentPage} />}
         {(this.state.currentPage === 'GrantAccess') &&
         <GrantAccessForScreening callback={this.setCurrentPage} web3={this.state.web}
