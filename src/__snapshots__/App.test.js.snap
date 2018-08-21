@@ -16,10 +16,20 @@ exports[`renders correctly 1`] = `
       Welcome to the Viel Cornwell Hookah Study
     </h2>
   </header>
-  <button
-    onClick={[Function]}
-  >
-     Sign Consent 
-  </button>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Digitally Sign Consent
+    </button>
+    <h1>
+      <a
+        href="./consent.txt"
+        target="_blank"
+      >
+        Print or download consent form
+      </a>
+    </h1>
+  </div>
 </div>
 `;
