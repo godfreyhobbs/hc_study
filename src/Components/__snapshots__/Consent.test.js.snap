@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <button
+    onClick={undefined}
+  >
+    Digitally Sign Consent
+  </button>
+  <h1>
+    <a
+      href="./consent.txt"
+      target="_blank"
+    >
+      Print or download the consent form for your records
+    </a>
+  </h1>
+</div>
+`;
