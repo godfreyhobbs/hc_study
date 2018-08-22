@@ -13,6 +13,14 @@ The hc_study repo is a demo Linnia Protocol based decentralized application usin
 1. Metamask
 1. Ethereum smart contract
 
+## Linnia documentation
+
+[Linnia](https://linnia.com)
+
+[Helpful Video](https://www.youtube.com/watch?v=w0VskCpUKZ8)
+
+[Overview](https://medium.com/linnia/linnia-f4f139a795ef)
+
 ## Details
 
 ### Medical Study and Recruitment
