@@ -17,6 +17,11 @@ import ethUtil from "ethereumjs-util";
 import Eth from "ethjs";
 import consentTxt from "./consent.json";
 import NavBar from "./Components/NavBar";
+import {ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+import { css } from 'glamor';
+
 
 window.Eth = Eth;
 
@@ -39,6 +44,12 @@ class App extends Component {
   }
 
   componentDidMount() {
+
+    toast("Metamask set to use the Ropsten Test Network is required.",{ autoClose: 90000,
+      position:'top-center',  bodyClassName: css({
+        fontSize: '33px',
+      }),
+    });
 
     // Get network provider and web3 instance.
     // See utils/getWeb3 for more info.
@@ -135,8 +146,11 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className='App'>
+
+        <ToastContainer />
         <MainHeader />
         {/*web3 requires metamask*/}
         {(this.state.web3 === null) && <div><p>ERROR METAMASK LOCKED OR MISSING</p></div>}
